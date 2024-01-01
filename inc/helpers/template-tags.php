@@ -52,8 +52,32 @@ function aquila_posted_on()
     $posted_on = sprintf(
         // esc_html_x func for help w/ translation + safe use HTML
         esc_html_x('Posted on %s', 'post date', 'aquila'),
-        '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
+        '<a class="text-decoration-none" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
     );
 
     echo '<span class="posted-one text-secondary">' . $posted_on . '</span>';
+}
+
+function aquila_posted_by()
+{
+    $byline = sprintf(
+        esc_html_x(' by %s', 'post author', 'aquila'),
+        '<span class="author vcard"><a class="text-decoration-none" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+    );
+
+    echo '<span class="byline text-secondary">' . $byline . '</span>';
+}
+
+function aquila_the_excerpt($trim_character_count = 0)
+{
+    if (!has_excerpt() || $trim_character_count === 0) {
+        the_excerpt();
+        return;
+    }
+
+    $excerpt = wp_strip_all_tags(get_the_excerpt());
+    $excerpt = substr($excerpt, 0, $trim_character_count);
+    $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
+
+    echo $excerpt . '[...]';
 }
