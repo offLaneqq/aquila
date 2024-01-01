@@ -24,5 +24,3 @@ function aquila_get_theme_instance()
 }
 
 aquila_get_theme_instance();
-
-add_action('wp_enqueue_scripts', 'aquila_enqueue_scripts');
