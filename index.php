@@ -54,6 +54,10 @@ get_header();
 
         endif;
         ?>
+        <div class="container">
+            <?php aquila_pagination(); ?>
+        </div>
+
     </main>
 </div>
 
