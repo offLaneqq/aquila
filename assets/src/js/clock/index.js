@@ -1,5 +1,3 @@
-// console.warn('hello world!');
-
 /****Clock*****/
 ( function ( $ ) {
 	class Clock {
