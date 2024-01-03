@@ -36,6 +36,13 @@ get_header();
 
         endif;
         ?>
+<div class="container">
+    <?php 
+        previous_post_link();
+        echo ' ----- ';
+        next_post_link();
+    ?>
+</div>
 </main>
 </div>
 
