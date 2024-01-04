@@ -4,7 +4,9 @@
   "description": "Aquila theme packages",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod": "cross-env NODE_ENV=production webpack --mode production --progress",
+    "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+    "clean": "rm -rf build/*"
   },
   "keywords": [
     "wordpress",
@@ -13,7 +15,7 @@
   "author": "Dmytro Klymchuk",
   "license": "ISC",
   "private": true,
-  "browserlist": [
+  "browserslist": [
     "defaults"
   ],
   "devDependencies": {
