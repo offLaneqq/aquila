@@ -40,7 +40,10 @@ const rules = [
   {
     test: /\.scss$/,
     exclude: /node_modules/,
-    use: [MiniCssExtractPlugin.loader, "css-loader"], // convert css into array of js, then minicssextraxtplugin take info and extract it into files
+    use: [
+      MiniCssExtractPlugin.loader, // convert css into array of js, then minicssextraxtplugin take info and extract it into files
+      "css-loader",
+      "sass-loader"], 
   },
   {
     test: /\.(png|jpg|svg|jpeg|gif|ico)$/,
