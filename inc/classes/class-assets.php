@@ -1,13 +1,15 @@
-<?php 
+<?php
 
 // 
 // Enqueue theme assets
 // 
 
 namespace AQUILA_THEME\Inc;
+
 use AQUILA_THEME\Inc\Traits\Singleton;
 
-class Assets {
+class Assets
+{
     use Singleton;
 
     protected function __construct()
@@ -26,14 +28,11 @@ class Assets {
     public function set_wp_styles()
     {
         // Register Styles
-        wp_register_style('style-css', get_stylesheet_uri(), [], filemtime(AQUILA_DIR_PATH . '/style.css'));
-        wp_register_style('bootstrap-css', AQUILA_DIR_URI . '/assets/src/library/css/bootstrap.min.css', [], false);
+        wp_register_style('bootstrap-css', AQUILA_DIR_URI . '/assets/build/library/css/bootstrap.min.css', [], false, 'all');
         wp_register_style('main-css', AQUILA_BUILD_CSS_URI . '/main.css', ['bootstrap-css'], filemtime(AQUILA_BUILD_CSS_DIR_PATH . '/main.css'), 'all');
-        wp_enqueue_style('fonts-css', get_template_directory_uri() . '/assets/src/library/fonts/fonts.css', [], false, 'all');
 
         // Enqueue Styles
         wp_enqueue_style('bootstrap-css');
-        wp_enqueue_style('style-css');
         wp_enqueue_style('main-css');
     }
 
