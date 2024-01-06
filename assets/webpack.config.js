@@ -68,7 +68,7 @@ const rules = [
   //   use: {
   //     loader: "file-loader",
   //     options: {
-  //       name: "[path][name].[ext]",
+  //       name: "library/fonts/lato-v24-latin/[name].[ext]",
   //       publicPath: "production" === process.env.NODE_ENV ? "../" : "../../",
   //     },
   //   },
