@@ -2,7 +2,7 @@
 
 function get_the_post_custom_thumbnail($post_id, $size = 'featured-large', $additional_attributes = [])
 {
-    $custom_thumbnails = [];
+    $custom_thumbnail = [];
 
     if ($post_id === null) {
         $post_id = get_the_ID();
@@ -15,15 +15,15 @@ function get_the_post_custom_thumbnail($post_id, $size = 'featured-large', $addi
         ];
         $attributes = array_merge($additional_attributes, $default_attributes);
 
-        $custom_thumbnails = wp_get_attachment_image(
+        $custom_thumbnail = wp_get_attachment_image(
             get_post_thumbnail_id($post_id),
             $size,
             false,
-            $additional_attributes
+            $attributes
         );
     }
 
-    return $custom_thumbnails;
+    return $custom_thumbnail;
 }
 
 function the_post_custom_thumbnail($post_id, $size = 'featured-thumbnail', $additional_attributes = [])
@@ -36,7 +36,7 @@ function aquila_posted_on()
     $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 
     // Post is modified
-    if (get_the_time(get_the_time('U') !== get_the_modified_time('U'))) {
+    if (get_the_time('U') !== get_the_modified_time('U')) {
         $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>
                         <time class="updated" datetime="%3$s">%4$s</time>';
     }
@@ -55,7 +55,7 @@ function aquila_posted_on()
         '<a class="text-decoration-none" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
     );
 
-    echo '<span class="posted-one text-secondary">' . $posted_on . '</span>';
+    echo '<span class="posted-on text-secondary">' . $posted_on . '</span>';
 }
 
 function aquila_posted_by()
@@ -86,7 +86,7 @@ function aquila_excerpt_more($more = '')
 {
     if (!is_single()) {
         $more = sprintf(
-            '<a class="aquila-read-more text-white" href="%1$s"><button class="mt-4 btn btn-info">%2$s</button></a>',
+            '<a class="aquila-read-more text-white" href="%1$s"><button class="mt-3 btn btn-info">%2$s</button></a>',
             // current way next
             // get_permalink(get_the_ID());
             // custom way next(here can be a bug) !!!
@@ -100,24 +100,20 @@ function aquila_excerpt_more($more = '')
 function aquila_pagination()
 {
 
-    $args = [
-        'before_page_number' => '<span class="btn border border-secondary mr-2 mb-2">',
-        'after_page_number' => '</span>'
-    ];
-
     $allowed_tags = [
         'span' => [
             'class' => []
         ],
         'a' => [
             'class' => [],
-            'href' => []
+            'href' => [],
         ]
     ];
-    if (paginate_links($args)) {
-        printf(
-            '<nav class="aquila-pagination clearfix">%s</nav>',
-            wp_kses(paginate_links($args), $allowed_tags)
-        );
-    }
+
+    $args = [
+        'before_page_number' => '<span class="btn border border-secondary mr-2 mb-2">',
+        'after_page_number' => '</span>',
+    ];
+
+    printf('<nav class="aquila-pagination clearfix">%s</nav>', wp_kses(paginate_links($args), $allowed_tags));
 }

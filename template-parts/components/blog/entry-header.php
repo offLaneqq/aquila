@@ -4,7 +4,7 @@
 // 
 $the_post_id = get_the_ID();
 $hide_title = get_post_meta($the_post_id, '_hide_page_title', true);
-$heading_class = !empty($hide_title) && $hide_title === 'yes' ? 'hide' : ''; 
+$heading_class = (!empty($hide_title) && $hide_title === 'yes') ? 'hide' : '';
 $has_post_thumbnail = get_the_post_thumbnail($the_post_id);
 ?>
 
@@ -12,23 +12,23 @@ $has_post_thumbnail = get_the_post_thumbnail($the_post_id);
     <?php
     // Image
     if ($has_post_thumbnail) {
-    ?>
+        ?>
         <div class="entry-image mb-3">
             <a href="<?php echo esc_url(get_permalink()); ?>">
-            <?php the_post_custom_thumbnail(
-                $the_post_id,
-                'featured-thumbnail',
-                [
-                    'sizes' => '(max-width: 350px) 350px, 233px',
-                    'class' => 'attachment-featured-thumbnail size-featured-image'
-                ]
-            ) ?>
+                <?php the_post_custom_thumbnail(
+                    $the_post_id,
+                    'featured-thumbnail',
+                    [
+                        'sizes' => '(max-width: 350px) 350px, 233px',
+                        'class' => 'attachment-featured-thumbnail size-featured-image'
+                    ]
+                ) ?>
             </a>
         </div>
-    <?php
+        <?php
     }
     // Title
-    if(is_single() || is_page()) {
+    if (is_single() || is_page()) {
         printf(
             '<h1 class="page-title text-dark %1$s">%2$s</h1>',
             esc_attr($heading_class),

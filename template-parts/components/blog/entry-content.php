@@ -10,7 +10,7 @@
         the_content(
             sprintf(
                 wp_kses(
-                    __('Continue reading %s <span class="meta-nav">rarr;</span>', 'aquila'),
+                    __('Continue reading %s <span class="meta-nav">&rarr;</span>', 'aquila'),
                     [
                         "span" => [
                             "class" => []
@@ -31,7 +31,7 @@
 
     } else {
         aquila_the_excerpt(350);
-        printf('<br />');
+        printf('<br>');
         echo aquila_excerpt_more();
     }
     ?>
