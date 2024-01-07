@@ -924,6 +924,17 @@ object {
 /*---------------------------
       Icons
 ---------------------------*/
+.home-page-wrap .entry-content > * {
+  margin: 60px auto 60px auto;
+}
+.home-page-wrap .entry-content > *:not(.alignfull) {
+  max-width: 1140px;
+  padding: 0 15px 0 15px;
+}
+.home-page-wrap .entry-content > .alignfull {
+  max-width: 1240px;
+}
+
 /* Entry meta */
 .updated:not(.published) {
   display: none;
