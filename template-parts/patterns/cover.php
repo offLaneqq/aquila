@@ -1,15 +1,17 @@
 <?php
 // 
 // Cover Block Patterns template
-// 
+//
+
+$cover_url = esc_url(AQUILA_BUILD_IMG_URI . '/patterns/cover.jpg');
+
 ?>
 
-<!-- wp:cover {"url":"http://test-site.local/wp-content/uploads/2023/12/nothin-to-see-here-neon-sign.jpeg","id":648,"dimRatio":50,"align":"full","className":"aquila-cover","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover alignfull aquila-cover"><span aria-hidden="true"
-        class="wp-block-cover__background has-background-dim"></span><img
-        class="wp-block-cover__image-background wp-image-648" alt="Nothin' to See Here Neon Sign"
-        src="http://test-site.local/wp-content/uploads/2023/12/nothin-to-see-here-neon-sign.jpeg"
-        data-object-fit="cover" />
+<!-- wp:cover {"url":"<?php echo $cover_url ?>","id":648,"dimRatio":50,"minHeight":640,"align":"full","className":"aquila-cover","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover alignfull aquila-cover" style="min-height:640px">
+    <span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span>
+    <img class="wp-block-cover__image-background wp-image-648" alt="Nothin' to See Here Neon Signqwe"
+        src="<?php echo $cover_url ?>" data-object-fit="cover" />
     <div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","level":1} -->
         <h1 class="wp-block-heading has-text-align-center"><strong>Nothin' to see here...</strong></h1>
         <!-- /wp:heading -->
