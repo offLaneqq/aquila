@@ -79,3 +79,24 @@
 .visible {
 	visibility: visible;
 }
+
+.aquila-icon-heading {
+	display: flex;
+
+	.aquila-icon-heading__heading {
+		display: flex;
+		align-items: center;
+		margin-right: 16px;
+		margin-left: 16px;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.aquila-dos-and-donts {
+	.aquila-dos-and-donts__list {
+		margin-left: 20px;
+	}
+}
