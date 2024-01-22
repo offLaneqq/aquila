@@ -548,6 +548,23 @@ hr.is-style-dots::before {
   padding-left: 12px;
 }
 
+.editor-styles-wrapper .wp-block-button.is-style-layout-border-blue-fill .wp-block-button__link,
+.wp-block-button.is-style-layout-border-blue-fill .wp-block-button__link {
+  border: 1px solid #0673a9;
+  background-color: #38affd !important;
+  color: #ffffff !important;
+  padding: 8px 30px;
+  border-radius: 3px;
+}
+.editor-styles-wrapper .wp-block-button.is-style-layout-border-white-no-fill .wp-block-button__link,
+.wp-block-button.is-style-layout-border-white-no-fill .wp-block-button__link {
+  border: 1px solid #ffffff;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  padding: 8px 30px;
+  border-radius: 3px;
+}
+
 /*---------------------------
 		Accessiblity
 ---------------------------*/
