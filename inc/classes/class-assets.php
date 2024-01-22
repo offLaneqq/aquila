@@ -29,10 +29,14 @@ class Assets
     {
         // Register Styles
         wp_register_style('bootstrap-css', AQUILA_BUILD_LIB_URI . '/css/bootstrap.min.css', [], false, 'all');
+        wp_register_style('slick-css', AQUILA_BUILD_LIB_URI . '/css/slick.css', [], false, 'all');
+        wp_register_style('slick-theme-css', AQUILA_BUILD_LIB_URI . '/css/slick-theme.css', ['slick-css'], false, 'all');
         wp_register_style('main-css', AQUILA_BUILD_CSS_URI . '/main.css', ['bootstrap-css'], filemtime(AQUILA_BUILD_CSS_DIR_PATH . '/main.css'), 'all');
 
         // Enqueue Styles
         wp_enqueue_style('bootstrap-css');
+        wp_enqueue_style('slick-css');
+        wp_enqueue_style('slick-theme-css');
         wp_enqueue_style('main-css');
     }
 
