@@ -976,6 +976,42 @@ object {
   border-radius: 3px;
 }
 
+.slick-slide:focus {
+  outline: none;
+}
+
+.slick-slider {
+  margin: 0 10px;
+}
+
+.slick-slide {
+  padding: 10px;
+  text-align: center;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.slick-arrow {
+  background-color: black;
+  z-index: 1;
+  width: 40px;
+  height: 120px;
+}
+.slick-arrow.slick-next {
+  right: 0 !important;
+  content: ">";
+}
+.slick-arrow.slick-next :before {
+  background-color: black;
+}
+.slick-arrow.slick-prev {
+  left: 0 !important;
+  content: "<";
+}
+.slick-arrow.slick-prev :before {
+  background-color: black;
+}
+
 .home-page-wrap .entry-content > * {
   margin: 60px auto 60px auto;
 }
