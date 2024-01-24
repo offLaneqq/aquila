@@ -10,7 +10,9 @@ get_header();
 <div id="primary">
     <main class="site-main mt-5" id="main" role="main">
         <div class="home-page-wrap">
-            <?php if (have_posts()):
+            <?php 
+            get_template_part('template-parts/posts-carousel');
+            if (have_posts()):
                 while (have_posts()):
                     the_post();
 

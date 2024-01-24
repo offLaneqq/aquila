@@ -1,0 +1,36 @@
+.slick-slide {
+  &:focus {
+    outline: none;
+  }
+}
+
+.slick-slider {
+  margin: 0 10px;
+}
+.slick-slide {
+  padding: 10px;
+  text-align: center;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.slick-arrow {
+    background-color: black;
+    z-index: 1;
+    width: 40px;
+    height: 120px;
+    &.slick-next {
+      right: 0 !important;
+      content: ">";
+      :before {
+        background-color: black;
+      }
+    }
+    &.slick-prev{
+      left: 0 !important;
+      content: "<";
+      :before {
+        background-color: black;
+      }
+    }
+  }
