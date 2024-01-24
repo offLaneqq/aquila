@@ -1012,6 +1012,28 @@ object {
   background-color: black;
 }
 
+.search-card-content {
+  display: flex;
+}
+.search-card-content p {
+  margin: 30px 50px;
+  width: 100%;
+}
+
+.search-card-container .search-card-content {
+  margin-top: 16px;
+}
+@media (min-width: 48em) {
+  .search-card-container .search-card-content {
+    margin-top: 0;
+  }
+}
+@media (min-width: 48em) {
+  .search-card-container .search-card-thumbnail {
+    margin-right: 16px;
+  }
+}
+
 .home-page-wrap .entry-content > * {
   margin: 60px auto 60px auto;
 }
