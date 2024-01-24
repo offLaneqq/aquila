@@ -1,0 +1,23 @@
+.search-card-content {
+  display: flex;
+  p {
+    margin: 30px 50px;
+    width: 100%;
+  }
+}
+
+.search-card-container {
+
+  .search-card-content {
+    margin-top: 16px;
+    @include mq(medium) {
+      margin-top: 0;
+    }
+  }
+
+  .search-card-thumbnail {
+    @include mq(medium) {
+      margin-right: 16px;
+    }
+  }
+}
