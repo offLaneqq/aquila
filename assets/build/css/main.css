@@ -472,6 +472,14 @@ figure {
   margin-left: 20px;
 }
 
+.inset-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: xxx-large;
+}
+
 html {
   box-sizing: border-box;
   -ms-text-size-adjust: 100%;
