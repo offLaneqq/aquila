@@ -4,34 +4,34 @@
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	left: -999em;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	word-wrap: normal;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  left: -999em;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal;
 
-	&:focus {
-		border-radius: $border-radius;
-		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-		clip: auto;
-		clip-path: none;
-		display: block;
-		font-size: 1em;
-		height: auto;
-		left: 5px;
-		line-height: normal;
-		padding: 15px 23px 14px;
-		text-decoration: none;
-		top: 5px;
-		width: auto;
-		z-index: 100000; /* Above WP toolbar. */
-	}
+  &:focus {
+    border-radius: $border-radius;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto;
+    clip-path: none;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+  }
 }
 
 /*---------------------------
@@ -39,29 +39,29 @@
 ---------------------------*/
 
 .left {
-	float: left;
+  float: left;
 }
 
 .right {
-	float: right;
+  float: right;
 }
 
 .text {
-	&-left {
-		text-align: left;
-	}
+  &-left {
+    text-align: left;
+  }
 
-	&-right {
-		text-align: right;
-	}
+  &-right {
+    text-align: right;
+  }
 
-	&-center {
-		text-align: center;
-	}
+  &-center {
+    text-align: center;
+  }
 
-	&-justify {
-		text-align: justify;
-	}
+  &-justify {
+    text-align: justify;
+  }
 }
 
 /*---------------------------
@@ -69,34 +69,42 @@
 ---------------------------*/
 
 .hide {
-	display: none;
+  display: none;
 }
 
 .hidden {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 .visible {
-	visibility: visible;
+  visibility: visible;
 }
 
 .aquila-icon-heading {
-	display: flex;
+  display: flex;
 
-	.aquila-icon-heading__heading {
-		display: flex;
-		align-items: center;
-		margin-right: 16px;
-		margin-left: 16px;
-	}
+  .aquila-icon-heading__heading {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    margin-left: 16px;
+  }
 
-	p {
-		margin: 0;
-	}
+  p {
+    margin: 0;
+  }
 }
 
 .aquila-dos-and-donts {
-	.aquila-dos-and-donts__list {
-		margin-left: 20px;
-	}
+  .aquila-dos-and-donts__list {
+    margin-left: 20px;
+  }
+}
+
+.inset-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: xxx-large;
 }

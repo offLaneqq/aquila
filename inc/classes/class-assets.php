@@ -46,10 +46,15 @@ class Assets
         wp_register_script('slick-js', AQUILA_BUILD_LIB_URI . '/js/slick.min.js', ['jquery'], false, true);
         wp_register_script('main-js', AQUILA_BUILD_JS_URI . '/main.js', ['jquery', 'slick-js'], filemtime(AQUILA_BUILD_JS_DIR_PATH . '/main.js'), true);
         wp_register_script('bootstrap-js', AQUILA_BUILD_LIB_URI . '/js/bootstrap.bundle.min.js', ['jquery'], false, true);
+        wp_register_script('author-js', AQUILA_BUILD_JS_URI . '/author.js', ['jquery'], filemtime(AQUILA_BUILD_JS_DIR_PATH . '/author.js'), true);
 
         // Enqueue Scripts
         wp_enqueue_script('main-js');
         wp_enqueue_script('bootstrap-js');
         wp_enqueue_script('slick-js');
+
+        if (is_author()) {
+            wp_enqueue_script('author-js');
+        }
     }
 }
