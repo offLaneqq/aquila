@@ -8,18 +8,18 @@ get_header();
 
 <div id="primary">
     <main class="site-main mt-5" id="main" role="main">
-        <?php if (have_posts()) : ?>
+        <?php if (have_posts()): ?>
             <div class="container">
 
                 <?php
                 if (is_home() && !is_front_page()) {
-                ?>
+                    ?>
                     <header class="mb-5">
                         <h1 class="page-title">
                             <?php single_post_title(); ?>
                         </h1>
                     </header>
-                <?php
+                    <?php
                 }
                 ?>
 
@@ -29,11 +29,12 @@ get_header();
                     $n_of_col = 3;
 
                     // Start loop
-                    while (have_posts()) : the_post();
+                    while (have_posts()):
+                        the_post();
                         if ($index % $n_of_col === 0) {
-                    ?>
+                            ?>
                             <div class="col-lg-4 col-md-6 col-sm-12">
-                            <?php
+                                <?php
                         }
 
                         get_template_part('template-parts/content');
@@ -43,19 +44,23 @@ get_header();
                         if ($index !== 0 && $index % $n_of_col === 0) {
                             ?>
                             </div>
-                    <?php
+                            <?php
                         }
                     endwhile ?>
                 </div>
             </div>
-        <?php
-        else : // can be bug here
+            <?php
+        else: // can be bug here
             get_template_part('template-parts/content-none');
 
         endif;
         ?>
         <div class="container">
-            <?php aquila_pagination(); ?>
+            <?php
+            if ($wp_query->post_count > 9) {
+                aquila_pagination();
+            }
+            ?>
         </div>
 
     </main>
